@@ -1,0 +1,7 @@
+output leds? maybe a text output. would require an emulated display
+
+eventually will need an eeprom programmer
+
+need to initialize status flags. as it is now, they mean nothing without documentation.
+
+find a better way to create the registers
