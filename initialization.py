@@ -30,16 +30,16 @@ def createEmptyEEPROM(RegisterSize=16,bits=8,blank=0):
 
 ################
 
-def createEmptyRam(registerSize=16,bits=8,blank=0x04):
+def createEmptyRam(registerSize=16,bits=8,blank=0):
     tempRam = {}
     defaultData = []
-    '''for x in range(bits):
-        defaultData.append(blank)'''
+    for x in range(bits):
+        defaultData.append(blank)
     memSize = bits
     for x in range(registerSize):
         memSize *= 2    
     for x in range(int(memSize)):
-        tempRam[hex(x)] = blank
+        tempRam[hex(x)] = defaultData
     return tempRam
 
 ################

@@ -3,6 +3,7 @@
 from initialization import * # used to create the hardware
 import display # only used to change values in display
 from multiprocessing import Process# used to create displays and outputs
+from commonDefs import *
 
 
 display.clockSpeed = .1 # 10 Hz
@@ -23,10 +24,6 @@ dataBus = createDataBus() # numberOfBusses=1,bits=8,blank=0
 '''if __name__ == '__main__': # runs concurrently with program.
     displayLoop = Process(target=display.printer)
     displayLoop.start()'''
-
-
-a = ram['0x44'] + ram['0x45']
-print(int(hex(a),16))
 
 ################ eeprom programmer
 
