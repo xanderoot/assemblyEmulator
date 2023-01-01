@@ -4,6 +4,7 @@ from initialization import * # used to create the hardware
 import display # only used to change values in display
 from multiprocessing import Process# used to create displays and outputs
 from commonDefs import *
+from bitstring import BitArray
 
 
 display.clockSpeed = .1 # 10 Hz
@@ -27,7 +28,14 @@ dataBus = createDataBus() # numberOfBusses=1,bits=8,blank=0
 
 ################ eeprom programmer
 
+with open('Pac-Man.nib','rb') as game:
+    pacman = game.read()
 
+code = BitArray(pacman)
+bit_string = code.bin
 
+for ch in bit_string[0:8]:
+    variable = ch
+    print(variable)
 
 ################ processing loop
